@@ -57,11 +57,11 @@ public class GenericArray<T> {
 
     public void add(int index, T e) {
        if (size == data.length) {
-            reszie(2 * data.length);
+           resetSize(2 * data.length);
        }
     }
 
-    private void reszie(int capacity) {
+    private void resetSize(int capacity) {
         T[] newData = (T[]) new Object[capacity];
 
         for (int i = 0; i < size; i++) {
