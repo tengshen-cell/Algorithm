@@ -56,9 +56,39 @@ public class GenericArray<T> {
 
 
     public void add(int index, T e) {
-       if (size == data.length) {
-           resetSize(2 * data.length);
-       }
+        checkIndexForAdd(index);
+        if (size == data.length) {
+            resetSize(2 * data.length);
+        }
+
+        for (int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
+        }
+        data[index] = e;
+        size++;
+    }
+
+    public void addFirst(T e) {
+        add(0, e);
+    }
+
+    public void addLast(T e) {
+        add(size, e);
+    }
+
+    public T remove(int index) {
+        checkIndex(index);
+
+        T ret = data[index];
+        for (int i = index + 1; i < size; i++) {
+            data[i - 1] = data[i];
+        }
+        size--;
+        data[size] = null;
+        if (size == data.length / 4 && data.length / 2 != 0) {
+            resetSize(data.length / 2);
+        }
+        return ret;
     }
 
     private void resetSize(int capacity) {
@@ -69,6 +99,31 @@ public class GenericArray<T> {
         }
 
         data = newData;
+    }
+
+    public T removeFirst() {
+        return remove(size - 1);
+    }
+
+    public void removeElement(T e) {
+        int index = find(e);
+        if (index != -1) {
+            remove(index);
+        }
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.format("Array size = %d, capacity = %d \n", size, data.length));
+        builder.append('[');
+        for (int i = 0; i < size; i++) {
+            builder.append(data[i]);
+            if (i != size - 1) {
+                builder.append(", ");
+            }
+        }
+        builder.append(']');
+        return builder.toString();
     }
 
     private void checkIndex(int index) {
