@@ -6,8 +6,8 @@ public class Exercise1 {
         double resultB = 2.0e-6 * 100000000.1;
         boolean resultC = true && false || true;
 
-        System.out.println("a)" + resultA);
-        System.out.println("b)" + resultB);
-        System.out.println("c)" + resultC);
+        System.out.println("a) " + resultA);
+        System.out.println("b) " + resultB);
+        System.out.println("c) " + resultC);
     }
 }
