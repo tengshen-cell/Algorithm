@@ -8,6 +8,12 @@ public class Exercise5 {
         isStrictlyBetween0And1(1.12, 1.33);
         StdOut.println("Expected: false");
 
+        isStrictlyBetween0And1(0.5, 1);
+        StdOut.println("Expected: false");
+
+        isStrictlyBetween0And1(0.5, 0.75);
+        StdOut.println("Expected: true");
+
     }
 
     private static void isStrictlyBetween0And1(double x, double y) {
