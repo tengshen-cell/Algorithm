@@ -10,7 +10,18 @@ public class Exercise11 {
     }
 
     private static void printArray(boolean[][] array) {
-        for (int i = 0; i < array.length; i++) {
+        for (boolean[] booleans : array) {
+            for (boolean aBoolean : booleans) {
+                if (aBoolean) {
+                    StdOut.print("*");
+                } else {
+                    StdOut.print(" ");
+                }
+            }
+            StdOut.println();
+        }
+
+       /* for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j]) {
                     StdOut.print("*");
@@ -19,6 +30,6 @@ public class Exercise11 {
                 }
             }
             StdOut.println();
-        }
+        }*/
     }
 }

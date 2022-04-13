@@ -8,11 +8,16 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class Exercise9 {
     public static void main(String[] args) {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         int N = 12;
         for (int n = N; n > 0; n /= 2) {
-            s = (n % 2) + s;
+            s.insert(0, (n % 2));
         }
-        StdOut.println(s);
+
+       /* int N = 12;
+        for (int n = N; n > 0; n /= 2) {
+            s = (n % 2) + s;
+        }*/
+        StdOut.println(s.toString());
     }
 }
