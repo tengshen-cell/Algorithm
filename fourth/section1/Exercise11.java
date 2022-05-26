@@ -21,15 +21,5 @@ public class Exercise11 {
             StdOut.println();
         }
 
-       /* for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (array[i][j]) {
-                    StdOut.print("*");
-                } else {
-                    StdOut.print(" ");
-                }
-            }
-            StdOut.println();
-        }*/
     }
 }
