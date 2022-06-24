@@ -2,10 +2,11 @@ package section1;
 
 import edu.princeton.cs.algs4.StdOut;
 
+/**/
 public class Exercise13 {
 
     public static void main(String[] args) {
-        int[][] mat = {{1,2, 4},{4, 5 ,6}};
+        int[][] mat = {{1, 2, 4}, {4, 5, 6}};
         transpose(mat);
         StdOut.println("\nExpected:");
         StdOut.println("1 4 \n" + "2 5 \n" + "3 6 ");
